@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClaJuO11eWEUGVtAGTkjREqdz98OV7HZQ",
@@ -9,7 +10,8 @@ const firebaseConfig = {
   projectId: "chat-app-73124",
   storageBucket: "chat-app-73124.appspot.com",
   messagingSenderId: "210485220026",
-  appId: "1:210485220026:web:f13088761045f537e92883"
+  appId: "1:210485220026:web:f13088761045f537e92883",
+  measurementId: "G-9VP01NDSXJ"
 };
 
 // Initialize Firebase
@@ -17,3 +19,4 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const storage = getStorage();
 export const db = getFirestore()
+const analytics = getAnalytics(app);
